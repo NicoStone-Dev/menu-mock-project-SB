@@ -3,7 +3,7 @@ package br.com.nicostone.menu_system.StaffMember.DTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import org.springframework.lang.Nullable;
 
 import java.io.Serializable;
 
@@ -11,12 +11,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StaffMemberDTO implements Serializable {
-    @NonNull
+    @Nullable
     private String username;
-    @NonNull
+    @Nullable
     private String email;
-    @NonNull
+    @Nullable
     private String password;
-    @NonNull
+    @Nullable
     private String cargo;
 }

@@ -36,12 +36,23 @@ public class StaffMemberService {
     public StaffMemberModel updateStaffMember(Long id, StaffMemberDTO input_data) {
         StaffMemberModel staffMember = this.findStaff(id);
 
-        staffMember.setEmail(input_data.getEmail());
-        staffMember.setUsername(input_data.getUsername());
-        staffMember.setCargo(input_data.getCargo());
+        if(input_data.getUsername() != null ){
+            staffMember.setUsername(input_data.getUsername());
+        }
+        if(input_data.getEmail() != null ){
+            staffMember.setEmail(input_data.getEmail());
+        }
+        if(input_data.getPassword() != null ){
+            staffMember.setPassword(input_data.getPassword());
+        }
+        if(input_data.getCargo() != null ){
+            staffMember.setCargo(input_data.getCargo());
+        }
 
         return staffRepo.save(staffMember);
     }
+
+
 
     public void deleteStaffMember(Long id){
         staffRepo.deleteById(id);

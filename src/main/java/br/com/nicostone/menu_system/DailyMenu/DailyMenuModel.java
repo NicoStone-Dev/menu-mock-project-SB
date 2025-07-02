@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "MenuHistory")
+@Table(name = "tb_daily-menu")
 public class DailyMenuModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

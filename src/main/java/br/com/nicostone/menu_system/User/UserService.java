@@ -2,6 +2,7 @@ package br.com.nicostone.menu_system.User;
 
 
 import br.com.nicostone.menu_system.User.DTO.UserDTO;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,6 +37,10 @@ public class UserService {
 
     public UserModel updateUser(Long id, UserDTO user) {
         UserModel userToUpdate = find(id);
+
+        if(user.getEmail() != null) {
+            userToUpdate.setEmail(user.getEmail());
+        }
         if (user.getNotifyAlmoco() != null) {
             userToUpdate.setNotifyAlmoco(user.getNotifyAlmoco());
         }
